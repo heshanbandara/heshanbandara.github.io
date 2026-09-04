@@ -1,11 +1,11 @@
 :root {
-    --bg-dark: #0a0a0a;
-    --card-bg: rgba(25, 25, 25, 0.8);
+    --bg-dark: #050505;
+    --card-bg: rgba(20, 20, 20, 0.6);
     --text-main: #ffffff;
     --text-muted: #a3a3a3;
     --primary-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
     --accent-color: #00f2fe;
-    --border-color: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -18,64 +18,90 @@
 body {
     background-color: var(--bg-dark);
     background-image:
-            radial-gradient(at 0% 0%, rgba(0, 242, 254, 0.15) 0px, transparent 50%),
-            radial-gradient(at 100% 100%, rgba(79, 172, 254, 0.15) 0px, transparent 50%);
+            radial-gradient(circle at 15% 50%, rgba(0, 242, 254, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 85% 30%, rgba(79, 172, 254, 0.08) 0%, transparent 50%);
     background-attachment: fixed;
     color: var(--text-main);
     line-height: 1.7;
     padding: 0 1rem;
+    overflow-x: hidden;
 }
 
-/* Navigation Bar */
+/* Animations */
+@keyframes slideUpFade {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 5px rgba(0, 242, 254, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(0, 242, 254, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(0, 242, 254, 0.2); }
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Base slide-up class */
+.animate-up {
+    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+/* Navigation */
 nav {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
     padding: 2rem 0;
     border-bottom: 1px solid var(--border-color);
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 nav a {
     color: var(--text-main);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
 }
 
 nav a:hover, nav a.active {
-    color: var(--accent-color);
-}
-
-.container {
-    max-width: 850px;
-    margin: 0 auto;
-    animation: fadeIn 1s ease-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    color: var(--bg-dark);
+    background: var(--primary-gradient);
+    animation: glowPulse 2s infinite;
 }
 
 header h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 800;
     background: var(--primary-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
+    letter-spacing: -1.5px;
 }
 
 header p.tagline {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
 }
 
 h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
     font-weight: 600;
     display: inline-block;
     position: relative;
@@ -84,45 +110,127 @@ h2 {
 h2::after {
     content: '';
     position: absolute;
-    width: 50%;
-    height: 3px;
-    bottom: -5px;
+    width: 40%;
+    height: 4px;
+    bottom: -8px;
     left: 0;
     background: var(--primary-gradient);
+    border-radius: 2px;
 }
+
+/* Skills Grid */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skill-badge {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    backdrop-filter: blur(10px);
+    animation: float 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+    border-color: var(--accent-color);
+    transform: scale(1.1) !important;
+    color: var(--accent-color);
+}
+
+/* Stagger floating animations slightly */
+.skill-badge:nth-child(even) { animation-delay: 1s; }
+.skill-badge:nth-child(3n) { animation-delay: 2s; }
 
 /* Project Cards */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
 }
 
 .project-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: all 0.4s ease;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(12px);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px) scale(1.02);
     border-color: var(--accent-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 242, 254, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 242, 254, 0.15);
 }
 
 .project-tech {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--accent-color);
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 footer {
     text-align: center;
-    margin-top: 5rem;
-    padding: 2rem 0;
+    margin-top: 6rem;
+    padding: 3rem 0;
     border-top: 1px solid var(--border-color);
     color: var(--text-muted);
+    font-size: 0.9rem;
+}
+/* --- Loading Screen --- */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* High-tech double spinner */
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 4px solid transparent;
+    border-top-color: #00f2fe;
+    border-bottom-color: #4facfe;
+    border-radius: 50%;
+    position: relative;
+    animation: loaderSpin 1.2s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px; right: 8px; bottom: 8px;
+    border: 3px solid transparent;
+    border-top-color: #4facfe;
+    border-radius: 50%;
+    animation: loaderSpin 2s linear infinite reverse;
+}
+
+@keyframes loaderSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Class added by JavaScript to hide the loader */
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
 }

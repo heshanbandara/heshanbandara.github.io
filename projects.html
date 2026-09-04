@@ -8,35 +8,58 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Loading Screen -->
+<div id="loader-wrapper">
+  <div class="loader"></div>
+</div>
+
 <div class="container">
-  <nav>
+  <!-- YOUR EXISTING NAV, HEADER, SECTION, ETC. STAY EXACTLY THE SAME HERE -->
+</div>
+
+<!-- Put this right before the closing </body> tag -->
+<script>
+  // Wait for the page to fully load
+  window.addEventListener('load', function() {
+    const loader = document.getElementById('loader-wrapper');
+    // Adding a 0.5s delay so the animation finishes nicely before fading out
+    setTimeout(() => {
+      loader.classList.add('loader-hidden');
+    }, 500);
+  });
+</script>
+
+
+<div class="container">
+  <nav class="animate-up">
     <a href="index.html">Home</a>
     <a href="projects.html" class="active">Projects</a>
     <a href="https://github.com/heshanbandara" target="_blank">GitHub</a>
   </nav>
 
   <section>
-    <h2>Featured Projects</h2>
+    <h2 class="animate-up" style="animation-delay: 0.2s;">Featured Builds</h2>
     <div class="project-grid">
 
-      <div class="project-card">
-        <h3 style="margin-bottom: 0.5rem;">Dating App Backend</h3>
+      <div class="project-card animate-up" style="animation-delay: 0.3s;">
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.4rem;">Dating App Backend</h3>
         <div class="project-tech">PYTHON / REST API / DB SCHEMA</div>
         <p style="color: var(--text-muted); font-size: 0.95rem;">
           Engineered scalable backend endpoints handling user registration, complex matching algorithms, and real-time messaging data flows.
         </p>
       </div>
 
-      <div class="project-card">
-        <h3 style="margin-bottom: 0.5rem;">Local AI Pipeline</h3>
+      <div class="project-card animate-up" style="animation-delay: 0.5s;">
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.4rem;">Local AI Pipeline</h3>
         <div class="project-tech">PYTHON / OLLAMA API / HTTP</div>
         <p style="color: var(--text-muted); font-size: 0.95rem;">
           Automated communication with local AI models using Ollama's HTTP endpoints, handling asynchronous API payloads and error status resolution.
         </p>
       </div>
 
-      <div class="project-card">
-        <h3 style="margin-bottom: 0.5rem;">2D Interactive Engine</h3>
+      <div class="project-card animate-up" style="animation-delay: 0.7s;">
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.4rem;">2D Interactive Engine</h3>
         <div class="project-tech">PYTHON / PYGAME</div>
         <p style="color: var(--text-muted); font-size: 0.95rem;">
           Implemented a game loop architecture from scratch, featuring accurate collision detection, sprite state management, and real-time inputs.
@@ -46,8 +69,8 @@
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2026 Heshan. Built and hosted on GitHub Pages.</p>
+  <footer class="animate-up" style="animation-delay: 0.9s;">
+    <p>&copy; 2026 Heshan. Engineered with code and hosted on GitHub.</p>
   </footer>
 </div>
 </body>
