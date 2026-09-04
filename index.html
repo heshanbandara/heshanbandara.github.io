@@ -3,257 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heshan | AI Engineering Portfolio</title>
+  <title>Heshan | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-dark: #0a0a0a;
-      --card-bg: rgba(25, 25, 25, 0.8);
-      --text-main: #ffffff;
-      --text-muted: #a3a3a3;
-      --primary-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-      --accent-color: #00f2fe;
-      --border-color: rgba(255, 255, 255, 0.1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      background-image: 
-        radial-gradient(at 0% 0%, rgba(0, 242, 254, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(79, 172, 254, 0.15) 0px, transparent 50%);
-      background-attachment: fixed;
-      color: var(--text-main);
-      line-height: 1.7;
-      padding: 2rem 1rem;
-    }
-
-    .container {
-      max-width: 850px;
-      margin: 0 auto;
-      animation: fadeIn 1s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    header {
-      text-align: center;
-      padding: 4rem 0 3rem 0;
-    }
-
-    header h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      background: var(--primary-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
-      letter-spacing: -1px;
-    }
-
-    header p.tagline {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      font-weight: 300;
-    }
-
-    .links a {
-      display: inline-block;
-      color: var(--text-main);
-      text-decoration: none;
-      margin: 0 0.5rem;
-      padding: 0.5rem 1.5rem;
-      border: 1px solid var(--border-color);
-      border-radius: 50px;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .links a:hover {
-      background: var(--primary-gradient);
-      border-color: transparent;
-      box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
-      transform: translateY(-2px);
-    }
-
-    section {
-      margin-top: 4rem;
-    }
-
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-      display: inline-block;
-      position: relative;
-    }
-
-    section h2::after {
-      content: '';
-      position: absolute;
-      width: 50%;
-      height: 3px;
-      bottom: -5px;
-      left: 0;
-      background: var(--primary-gradient);
-      border-radius: 2px;
-    }
-
-    p.about-text {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-    }
-
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-
-    .skill-badge {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      color: var(--text-main);
-      transition: all 0.3s ease;
-      cursor: default;
-    }
-
-    .skill-badge:hover {
-      border-color: var(--accent-color);
-      box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
-      transform: scale(1.05);
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 1.5rem;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      backdrop-filter: blur(10px);
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      border-color: var(--accent-color);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 242, 254, 0.1);
-    }
-
-    .project-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--text-main);
-    }
-
-    .project-tech {
-      font-size: 0.85rem;
-      color: var(--accent-color);
-      margin-bottom: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    .project-desc {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 5rem;
-      padding: 2rem 0;
-      border-top: 1px solid var(--border-color);
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Heshan</h1>
-      <p class="tagline">AI Engineering Student & Developer</p>
-      <div class="links">
-        <a href="https://github.com" target="_blank">GitHub</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        <a href="mailto:your-email@example.com">Email Me</a>
-      </div>
-    </header>
+<div class="container">
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="https://github.com/heshanbandara" target="_blank">GitHub</a>
+  </nav>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p class="about-text">
-        I am an AI Engineering student passionate about integrating artificial intelligence into practical, scalable applications. My experience ranges from developing backend architectures and testing local LLM inference to building interactive 2D games. I love solving complex problems across the full stack.
-      </p>
-    </section>
+  <header>
+    <h1>Heshan</h1>
+    <p class="tagline">AI Engineering Student & Developer</p>
+  </header>
 
-    <section id="skills">
-      <h2>Technical Arsenal</h2>
-      <div class="skills-grid">
-        <span class="skill-badge">Python</span>
-        <span class="skill-badge">JavaScript</span>
-        <span class="skill-badge">Ollama / Local LLMs</span>
-        <span class="skill-badge">REST APIs</span>
-        <span class="skill-badge">Pygame</span>
-        <span class="skill-badge">System Architecture</span>
-      </div>
-    </section>
+  <section>
+    <h2>About Me</h2>
+    <p style="color: var(--text-muted); font-size: 1.05rem;">
+      I am an AI Engineering student passionate about integrating artificial intelligence into practical, scalable applications. My experience ranges from developing backend architectures for apps to testing local LLM inference and building interactive 2D games using Python.
+    </p>
+  </section>
 
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <div class="project-grid">
-        
-        <div class="project-card">
-          <div class="project-title">Dating App Backend</div>
-          <div class="project-tech">PYTHON / REST API / DB SCHEMA</div>
-          <p class="project-desc">
-            Engineered scalable backend endpoints handling user registration, complex matching algorithms, and real-time messaging data flows.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <div class="project-title">Local AI Pipeline</div>
-          <div class="project-tech">PYTHON / OLLAMA API / HTTP</div>
-          <p class="project-desc">
-            Automated communication with local AI models using Ollama's HTTP endpoints, handling asynchronous API payloads and error status resolution.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <div class="project-title">2D Interactive Engine</div>
-          <div class="project-tech">PYTHON / PYGAME</div>
-          <p class="project-desc">
-            Implemented a game loop architecture from scratch, featuring accurate collision detection, sprite state management, and real-time inputs.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <footer>
-      <p>&copy; 2026 Heshan. Built and hosted on GitHub Pages.</p>
-    </footer>
-  </div>
+  <footer>
+    <p>&copy; 2026 Heshan. Built and hosted on GitHub Pages.</p>
+  </footer>
+</div>
 </body>
 </html>
