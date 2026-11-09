@@ -2,76 +2,264 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Explore Heshan's backend, AI, and Python game development projects."
+  >
+  <meta name="theme-color" content="#070b14">
+
   <title>Heshan | Projects</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="script.js?v=2" defer></script>
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- Loading Screen -->
-<div id="loader-wrapper">
-  <div class="loader"></div>
-</div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
-<div class="container">
-  <!-- YOUR EXISTING NAV, HEADER, SECTION, ETC. STAY EXACTLY THE SAME HERE -->
-</div>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a class="logo" href="index.html" aria-label="Heshan home">
+        Heshan<span>.</span>
+      </a>
 
-<!-- Put this right before the closing </body> tag -->
-<script>
-  // Wait for the page to fully load
-  window.addEventListener('load', function() {
-    const loader = document.getElementById('loader-wrapper');
-    // Adding a 0.5s delay so the animation finishes nicely before fading out
-    setTimeout(() => {
-      loader.classList.add('loader-hidden');
-    }, 500);
-  });
-</script>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-controls="main-nav"
+        aria-expanded="false"
+        hidden
+      >
+        ☰
+      </button>
 
-
-<div class="container">
-  <nav class="animate-up">
-    <a href="index.html">Home</a>
-    <a href="projects.html" class="active">Projects</a>
-    <a href="https://github.com/heshanbandara" target="_blank">GitHub</a>
-  </nav>
-
-  <section>
-    <h2 class="animate-up" style="animation-delay: 0.2s;">Featured Builds</h2>
-    <div class="project-grid">
-
-      <div class="project-card animate-up" style="animation-delay: 0.3s;">
-        <h3 style="margin-bottom: 0.5rem; font-size: 1.4rem;">Dating App Backend</h3>
-        <div class="project-tech">PYTHON / REST API / DB SCHEMA</div>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">
-          Engineered scalable backend endpoints handling user registration, complex matching algorithms, and real-time messaging data flows.
-        </p>
-      </div>
-
-      <div class="project-card animate-up" style="animation-delay: 0.5s;">
-        <h3 style="margin-bottom: 0.5rem; font-size: 1.4rem;">Local AI Pipeline</h3>
-        <div class="project-tech">PYTHON / OLLAMA API / HTTP</div>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">
-          Automated communication with local AI models using Ollama's HTTP endpoints, handling asynchronous API payloads and error status resolution.
-        </p>
-      </div>
-
-      <div class="project-card animate-up" style="animation-delay: 0.7s;">
-        <h3 style="margin-bottom: 0.5rem; font-size: 1.4rem;">2D Interactive Engine</h3>
-        <div class="project-tech">PYTHON / PYGAME</div>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">
-          Implemented a game loop architecture from scratch, featuring accurate collision detection, sprite state management, and real-time inputs.
-        </p>
-      </div>
-
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a
+          href="https://github.com/heshanbandara"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub ↗
+        </a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <footer class="animate-up" style="animation-delay: 0.9s;">
-    <p>&copy; 2026 Heshan. Engineered with code and hosted on GitHub.</p>
+  <main class="container" id="main">
+    <section class="projects-header reveal">
+      <p class="eyebrow">SELECTED WORK / EXPERIMENTS</p>
+
+      <h1>
+        Less theory.<br>
+        <span class="gradient-text">More making.</span>
+      </h1>
+
+      <p class="hero-description">
+        Exploring ideas through backend development,
+        local AI workflows, and interactive Python projects.
+      </p>
+    </section>
+
+    <section class="projects-section" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="sr-only">Projects</h2>
+
+      <div
+        class="project-filters reveal"
+        role="group"
+        aria-label="Filter projects"
+        hidden
+      >
+        <button type="button" data-filter="all" aria-pressed="true">
+          All projects <span>03</span>
+        </button>
+
+        <button type="button" data-filter="backend" aria-pressed="false">
+          Backend
+        </button>
+
+        <button type="button" data-filter="ai" aria-pressed="false">
+          AI
+        </button>
+
+        <button type="button" data-filter="games" aria-pressed="false">
+          Games
+        </button>
+      </div>
+
+      <p class="sr-only" id="filter-status" role="status"></p>
+
+      <div class="project-grid">
+        <article class="project-card glass reveal" data-category="backend">
+          <div class="project-visual visual-backend" aria-hidden="true">
+            <span class="visual-tag">BACKEND DEVELOPMENT</span>
+
+            <div class="code-window">
+              <div class="window-dots"><i></i><i></i><i></i></div>
+              <p><span>POST</span> /users/register</p>
+              <p><span>GET</span> /profiles</p>
+              <p><span>POST</span> /messages</p>
+              <div class="code-line"></div>
+              <div class="code-line short"></div>
+            </div>
+
+            <span class="visual-label">API concept illustration</span>
+          </div>
+
+          <div class="project-content">
+            <p class="project-tech">01 / PYTHON · REST API · DATABASE</p>
+            <h3>Dating App Backend</h3>
+
+            <p>
+              A backend project exploring account registration,
+              matching logic, database structure, and messaging data flows.
+            </p>
+
+            <div class="project-tags">
+              <span>Python</span>
+              <span>REST APIs</span>
+              <span>Database Design</span>
+            </div>
+
+            <details class="project-more">
+              <summary>Explore the focus <span>+</span></summary>
+              <p>
+                Connecting application features to API endpoints and
+                structured data, with attention to validation and
+                maintainable backend logic.
+              </p>
+            </details>
+          </div>
+        </article>
+
+        <article class="project-card glass reveal" data-category="ai">
+          <div class="project-visual visual-ai" aria-hidden="true">
+            <span class="visual-tag">ARTIFICIAL INTELLIGENCE</span>
+
+            <div class="pipeline">
+              <span>INPUT</span>
+              <i>↓</i>
+              <span class="pipeline-core">LOCAL LLM</span>
+              <i>↓</i>
+              <span>RESPONSE</span>
+            </div>
+
+            <span class="visual-label">Workflow illustration</span>
+          </div>
+
+          <div class="project-content">
+            <p class="project-tech">02 / PYTHON · OLLAMA · HTTP</p>
+            <h3>Local AI Pipeline</h3>
+
+            <p>
+              Exploring communication with local AI models through
+              Ollama HTTP endpoints and Python application workflows.
+            </p>
+
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Ollama API</span>
+              <span>Local LLMs</span>
+            </div>
+
+            <details class="project-more">
+              <summary>Explore the focus <span>+</span></summary>
+              <p>
+                Working with request payloads, asynchronous responses,
+                API errors, and the connection between an application
+                and a locally running model.
+              </p>
+            </details>
+          </div>
+        </article>
+
+        <article class="project-card glass reveal" data-category="games">
+          <div class="project-visual visual-game" aria-hidden="true">
+            <span class="visual-tag">INTERACTIVE DEVELOPMENT</span>
+
+            <div class="game-scene">
+              <span class="game-platform platform-one"></span>
+              <span class="game-platform platform-two"></span>
+              <span class="game-player"></span>
+              <span class="game-star">✦</span>
+            </div>
+
+            <span class="visual-label">Gameplay concept illustration</span>
+          </div>
+
+          <div class="project-content">
+            <p class="project-tech">03 / PYTHON · PYGAME</p>
+            <h3>2D Interactive Engine</h3>
+
+            <p>
+              A Python game development project exploring game loops,
+              player input, sprites, and collision handling.
+            </p>
+
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Pygame</span>
+              <span>Game Development</span>
+            </div>
+
+            <details class="project-more">
+              <summary>Explore the focus <span>+</span></summary>
+              <p>
+                Understanding how rendering, movement, input handling,
+                and game state come together inside a real-time loop.
+              </p>
+            </details>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="projects-cta glass reveal">
+      <div>
+        <p class="eyebrow">MORE IN THE MAKING</p>
+        <h2>Keep exploring.</h2>
+        <p>Find more projects and follow my learning on GitHub.</p>
+      </div>
+
+      <a
+        class="button button-primary"
+        href="https://github.com/heshanbandara?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Browse repositories <span>↗</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="container site-footer">
+    <p>© <span data-year>2026</span> Heshan. Built with curiosity.</p>
+
+    <button
+      class="motion-toggle"
+      type="button"
+      aria-pressed="false"
+      hidden
+    >
+      Pause animations
+    </button>
+
+    <a href="#main">Back to top ↑</a>
   </footer>
-</div>
 </body>
 </html>

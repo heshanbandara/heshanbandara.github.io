@@ -2,69 +2,259 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heshan | Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Heshan — AI engineering student exploring artificial intelligence,
+    cybersecurity, Flutter development, and video editing."
+  >
+  <meta name="theme-color" content="#070b14">
+
+  <title>Heshan | AI Engineering Student</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="script.js?v=2" defer></script>
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- Loading Screen -->
-<div id="loader-wrapper">
-  <div class="loader"></div>
-</div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
-<div class="container">
-  <!-- YOUR EXISTING NAV, HEADER, SECTION, ETC. STAY EXACTLY THE SAME HERE -->
-</div>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a class="logo" href="index.html" aria-label="Heshan home">
+        Heshan<span>.</span>
+      </a>
 
-<!-- Put this right before the closing </body> tag -->
-<script>
-  // Wait for the page to fully load
-  window.addEventListener('load', function() {
-    const loader = document.getElementById('loader-wrapper');
-    // Adding a 0.5s delay so the animation finishes nicely before fading out
-    setTimeout(() => {
-      loader.classList.add('loader-hidden');
-    }, 500);
-  });
-</script>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-controls="main-nav"
+        aria-expanded="false"
+        hidden
+      >
+        ☰
+      </button>
 
-
-<div class="container">
-  <nav class="animate-up">
-    <a href="index.html" class="active">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="https://github.com/heshanbandara" target="_blank">GitHub</a>
-  </nav>
-
-  <header class="animate-up" style="animation-delay: 0.2s;">
-    <h1>Heshan</h1>
-    <p class="tagline">AI Engineering Student & Developer</p>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="#skills">Skills</a>
+        <a
+          href="https://github.com/heshanbandara"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub ↗
+        </a>
+      </nav>
+    </div>
   </header>
 
-  <section class="animate-up" style="animation-delay: 0.4s;">
-    <h2>About Me</h2>
-    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
-      I am an AI Engineering student passionate about integrating artificial intelligence into practical, scalable applications. My experience ranges from developing backend architectures for apps to testing local LLM inference and building interactive 2D games using Python.
-    </p>
-  </section>
+  <main id="main">
+    <section class="hero container">
+      <div class="hero-content reveal">
+        <div class="availability">
+          <span class="status-dot"></span>
+          OPEN TO LEARNING & COLLABORATION
+        </div>
 
-  <section class="animate-up" style="animation-delay: 0.6s; margin-top: 4rem;">
-    <h2>Core Tech</h2>
-    <div class="skills-grid">
-      <span class="skill-badge">Python</span>
-      <span class="skill-badge">JavaScript</span>
-      <span class="skill-badge">Ollama API</span>
-      <span class="skill-badge">REST Architecture</span>
-      <span class="skill-badge">Pygame</span>
-      <span class="skill-badge">Visual Design</span>
-    </div>
-  </section>
+        <p class="eyebrow">HELLO, I’M HESHAN</p>
 
-  <footer class="animate-up" style="animation-delay: 0.8s;">
-    <p>&copy; 2026 Heshan. Engineered with code and hosted on GitHub.</p>
+        <h1>
+          Curious mind.<br>
+          <span class="gradient-text">Creative builder.</span>
+        </h1>
+
+        <p class="hero-description">
+          An AI engineering student exploring intelligent systems,
+          building useful applications, and bringing stories to life.
+        </p>
+
+        <div class="hero-tags">
+          <span>Artificial Intelligence</span>
+          <span>Flutter Development</span>
+          <span>Video Editing</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="projects.html">
+            Explore my projects <span>↗</span>
+          </a>
+
+          <a class="button button-outline" href="#about">
+            Get to know me
+          </a>
+        </div>
+
+        <p class="location">Based in Sri Lanka · Always learning</p>
+      </div>
+
+      <div class="hero-art reveal" aria-label="Animated developer illustration">
+        <div class="orbit orbit-one" aria-hidden="true"></div>
+        <div class="orbit orbit-two" aria-hidden="true"></div>
+        <div class="orbit orbit-three" aria-hidden="true"></div>
+
+        <div class="core" aria-hidden="true">H<span>.</span></div>
+
+        <span class="floating-label label-ai">AI & ML</span>
+        <span class="floating-label label-code">&lt;build /&gt;</span>
+        <span class="floating-label label-create">CREATE</span>
+
+        <div class="art-caption">
+          <span class="status-dot"></span>
+          IDEAS INTO EXPERIENCES
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" id="about">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">01 / ABOUT ME</p>
+          <h2>Technology meets <span>curiosity.</span></h2>
+        </div>
+
+        <p>Learning by building. Improving through practice.</p>
+      </div>
+
+      <div class="about-grid">
+        <article class="glass about-card reveal">
+          <span class="card-icon" aria-hidden="true">⌘</span>
+          <h3>A developer’s mindset</h3>
+
+          <p>
+            I’m an AI engineering student interested in artificial
+            intelligence, machine learning, and cybersecurity.
+            I enjoy understanding how systems work and turning
+            ideas into practical applications.
+          </p>
+
+          <p>
+            My work includes web development, backend APIs, and
+            cross-platform mobile applications with Flutter.
+          </p>
+        </article>
+
+        <article class="glass about-card reveal">
+          <span class="card-icon" aria-hidden="true">✦</span>
+          <h3>A creator’s perspective</h3>
+
+          <p>
+            Alongside development, I enjoy video editing and visual
+            storytelling: finding the right pace, shaping transitions,
+            and making every frame serve a purpose.
+          </p>
+
+          <p>
+            I’m currently exploring LLMs, RAG, LangChain,
+            LangGraph, and secure application design.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="skills">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">02 / MY TOOLKIT</p>
+          <h2>Different tools.<br><span>Connected ideas.</span></h2>
+        </div>
+      </div>
+
+      <div class="skills-layout">
+        <article class="glass skill-group reveal">
+          <span class="skill-number">01</span>
+          <h3>Web & backend</h3>
+
+          <div class="skills-grid">
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">FastAPI</span>
+            <span class="skill-badge">Angular</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">PostgreSQL</span>
+            <span class="skill-badge">SQLAlchemy</span>
+            <span class="skill-badge">Git</span>
+          </div>
+        </article>
+
+        <article class="glass skill-group reveal">
+          <span class="skill-number">02</span>
+          <h3>Mobile & creative</h3>
+
+          <div class="skills-grid">
+            <span class="skill-badge">Flutter</span>
+            <span class="skill-badge">Dart</span>
+            <span class="skill-badge">Video Editing</span>
+            <span class="skill-badge">Transitions</span>
+            <span class="skill-badge">Captions</span>
+            <span class="skill-badge">Visual Storytelling</span>
+          </div>
+        </article>
+
+        <article class="glass skill-group skill-group-wide reveal">
+          <span class="skill-number">03 / CURRENTLY EXPLORING</span>
+          <h3>Intelligence & security</h3>
+
+          <div class="skills-grid">
+            <span class="skill-badge">LLMs</span>
+            <span class="skill-badge">RAG</span>
+            <span class="skill-badge">LangChain</span>
+            <span class="skill-badge">LangGraph</span>
+            <span class="skill-badge">Ollama API</span>
+            <span class="skill-badge">Cybersecurity</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="contact-panel glass reveal">
+        <p class="eyebrow">LET’S CONNECT</p>
+
+        <h2>Have an idea?<br><span>Let’s build something.</span></h2>
+
+        <p>
+          Open to practical projects, creative collaborations,
+          and opportunities to learn.
+        </p>
+
+        <a
+          class="button button-primary"
+          href="https://github.com/heshanbandara"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Connect on GitHub <span>↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container site-footer">
+    <p>© <span data-year>2026</span> Heshan. Built with curiosity.</p>
+
+    <button
+      class="motion-toggle"
+      type="button"
+      aria-pressed="false"
+      hidden
+    >
+      Pause animations
+    </button>
+
+    <a href="#main">Back to top ↑</a>
   </footer>
-</div>
 </body>
 </html>
