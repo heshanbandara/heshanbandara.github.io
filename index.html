@@ -20,6 +20,12 @@
   >
 
   <link rel="stylesheet" href="style.css?v=2">
+
+<script
+  src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"
+  defer>
+</script>
+
   <script src="script.js?v=2" defer></script>
 </head>
 
@@ -164,6 +170,49 @@
         </article>
       </div>
     </section>
+
+
+<section id="activity" class="section shell">
+  <div class="section-label reveal">
+    <span>GITHUB / DEVELOPMENT ACTIVITY</span>
+    <span>ALWAYS BUILDING.</span>
+  </div>
+
+  <div class="section-heading reveal">
+    <h2>Code in <em>motion.</em></h2>
+    <p>My journey through code and collaboration.</p>
+  </div>
+
+  <div class="activity-dashboard reveal">
+    <div class="activity-info">
+      <span class="activity-status">
+        ● GITHUB ACTIVITY
+      </span>
+
+      <h3>Building every day.</h3>
+      <p id="activity-total">Loading contributions...</p>
+
+      <div id="activity-stats"></div>
+
+      <a href="https://github.com/heshanbandara"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="underlined-link">
+        Explore my GitHub ↗
+      </a>
+    </div>
+
+    <div class="activity-chart">
+      <canvas id="githubRadar"
+              role="img"
+              aria-label="GitHub contribution breakdown">
+      </canvas>
+    </div>
+  </div>
+
+  <p id="activity-updated" class="activity-updated"></p>
+</section>
+
 
     <section class="container section" id="skills">
       <div class="section-heading reveal">

@@ -1188,3 +1188,85 @@ html.motion-paused {
     transform: none;
   }
 }
+
+
+/* GitHub Activity Dashboard */
+
+.activity-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  border: 1px solid #34382c;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg, #171914, #111210
+  );
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow .4s ease,
+              border-color .4s ease;
+}
+
+.activity-dashboard:hover {
+  border-color: #d8fa76;
+  box-shadow: 0 0 40px #d8fa7615;
+}
+
+.activity-status {
+  color: #d8fa76;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.activity-info h3 {
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+.activity-chart {
+  min-width: 0;
+  padding: 10px;
+}
+
+.activity-stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #34382c;
+}
+
+.activity-stat strong {
+  color: #d8fa76;
+  font-size: 22px;
+}
+
+#activity-stats {
+  margin: 25px 0;
+}
+
+.activity-updated {
+  font-size: 12px;
+  color: #92968a;
+  margin-top: 16px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .activity-dashboard {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .activity-info h3 {
+    font-size: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .activity-dashboard {
+    transition: none;
+  }
+}
